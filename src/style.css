@@ -15,6 +15,7 @@ h3 {
 h1 {
   font-size: 26px;
   margin-bottom: 20px;
+  margin-left: 10px;
 }
 
 h2 {
@@ -41,6 +42,17 @@ footer {
   margin: 0 auto;
   max-width: 600px;
   padding: 20px 20px;
+}
+
+.header {
+  position: relative;
+}
+
+.last-updated {
+  position: absolute;
+  font-size: 12px;
+  margin-left: 10px;
+  top: 80px;
 }
 
 .search {
@@ -79,11 +91,6 @@ footer {
   background: #59517b;
   border: 1px solid #59517b;
   color: #fff;
-}
-
-.last-updated {
-  font-size: 12px;
-  line-height: 1;
 }
 
 .weather-cat {
@@ -152,6 +159,7 @@ footer {
 .forecast-temp {
   font-size: 14px;
   line-height: 20px;
+  margin-top: 12px;
 }
 
 .fahrenheit {

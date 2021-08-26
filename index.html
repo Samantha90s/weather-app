@@ -27,7 +27,11 @@
 
   <body>
     <div class="container">
-      <img id="cover-image" src="images/weather.jpg" alt="Clouds" />
+      <div class="header">
+        <div class="last-updated"><p>Last updated:</p></div>
+
+        <img id="cover-image" src="images/weather.jpg" alt="Clouds" />
+      </div>
 
       <div class="row">
         <div class="col-sm-7">
@@ -35,7 +39,6 @@
             Weather in<br />
             <span id="city">Amsterdam</span>
           </h1>
-          <div class="last-updated"><p>Last updated: </p></div>
         </div>
 
         <div class="col-sm-5 search">
@@ -58,7 +61,9 @@
               </div>
             </div>
           </form>
-          <button class="input-group current-location">Show current location</button>
+          <button class="input-group current-location">
+            Show current location
+          </button>
         </div>
       </div>
 
@@ -72,7 +77,9 @@
             <span id="temp-current">16</span>°<span class="celsius">C</span>
           </div>
           <p>
-            <span id="temp-today-min">13</span>°/<span id="temp-today-max">18</span>°
+            <span id="temp-today-min">13</span>°/<span id="temp-today-max"
+              >18</span
+            >°
             <br />
           </p>
         </div>
@@ -80,7 +87,6 @@
           <div class="weather-today">
             <img src="images/01d.jpg" />
           </div>
-          </p>
         </div>
         <div class="col-4 temp-addition">
           <p>
@@ -98,14 +104,14 @@
           <div class="forecast-block-day">
             <div class="img-section">
               <img src="images/02d.jpg" />
-              </div>
+            </div>
+            <div class="forecast-temp">
               <p>
-              <div class="forecast-temp"
-                ><span id="day-two-min">10</span>°/<span id="day-two-max"
+                <span id="day-two-min">10</span>°/<span id="day-two-max"
                   >14</span
-                >°</div
-              >
-            </p>
+                >°
+              </p>
+            </div>
           </div>
         </div>
         <div class="col">
@@ -113,16 +119,16 @@
             <h3 id="day-three">Day 3</h3>
           </div>
           <div class="forecast-block-day">
-            <div class="img-section">            
+            <div class="img-section">
               <img src="images/03d.jpg" />
-              </div>
-            <p>
-              <div class="forecast-temp"
-                ><span id="day-three-min">12</span>°/<span id="day-three-max"
+            </div>
+            <div class="forecast-temp">
+              <p>
+                <span id="day-three-min">12</span>°/<span id="day-three-max"
                   >15</span
-                >°</div
-              >
-            </p>
+                >°
+              </p>
+            </div>
           </div>
         </div>
         <div class="col">
@@ -132,14 +138,14 @@
           <div class="forecast-block-day">
             <div class="img-section">
               <img src="images/09d.jpg" />
-              </div>
-            <p>              
-              <div class="forecast-temp"
-                ><span id="day-four-min">13</span>°/<span id="day-four-max"
+            </div>
+            <div class="forecast-temp">
+              <p>
+                <span id="day-four-min">13</span>°/<span id="day-four-max"
                   >19</span
-                >°</div
-              >
-            </p>
+                >°
+              </p>
+            </div>
           </div>
         </div>
         <div class="col">
@@ -147,16 +153,16 @@
             <h3 id="day-five">Day 5</h3>
           </div>
           <div class="forecast-block-day">
-            <div class="img-section">            
+            <div class="img-section">
               <img src="images/10d.jpg" />
-              </div>
-            <p>
-              <div class="forecast-temp"
-                ><span id="day-five-min">11</span>°/<span id="day-five-max"
+            </div>
+            <div class="forecast-temp">
+              <p>
+                <span id="day-five-min">11</span>°/<span id="day-five-max"
                   >18</span
-                >°</div
-              >
-            </p>
+                >°
+              </p>
+            </div>
           </div>
         </div>
         <div class="col">
@@ -164,26 +170,32 @@
             <h3 id="day-six">Day 6</h3>
           </div>
           <div class="forecast-block-day">
-            <div class="img-section img-day-six">              
+            <div class="img-section img-day-six">
               <img src="images/11d.jpg" />
-              </div>
-             <p>
-              <div class="forecast-temp"
-                ><span id="day-six-min">12</span>°/<span id="day-six-max"
+            </div>
+            <div class="forecast-temp">
+              <p>
+                <span id="day-six-min">12</span>°/<span id="day-six-max"
                   >20</span
-                >°</div
-              >
-            </p>
+                >°
+              </p>
+            </div>
           </div>
         </div>
       </div>
       <p>
-      <a class="fahrenheit">Show in Fahrenheit</a>
+        <a class="fahrenheit">Show in Fahrenheit</a>
       </p>
     </div>
     <footer>
       <p>
-        <a class="footer" href="https://github.com/Samantha90s/weather-app" target="_blank">Open-source code</a> by Samantha Stroombergen
+        <a
+          class="footer"
+          href="https://github.com/Samantha90s/weather-app"
+          target="_blank"
+          >Open-source code</a
+        >
+        by Samantha Stroombergen
       </p>
     </footer>
     <script src="src/script.js"></script>
