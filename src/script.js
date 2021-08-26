@@ -70,9 +70,7 @@ function showTemperature(response) {
   currentIcon.innerHTML = `<img src="images/${weatherIcon}.jpg">`;
 
   let date = document.querySelector(".last-updated");
-  date.innerHTML =
-    "Last updated: " +
-    formatTime(response.data.dt + response.data.timezone * 1000);
+  date.innerHTML = "Last updated: " + formatTime(response.data.dt * 1000);
 }
 
 function searchCity(event) {
