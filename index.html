@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather wireframe</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="src/style.css" />
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <img id="cover-image" src="images/weather.jpg" alt="Clouds" />
+
+      <div class="row">
+        <div class="col-sm-7">
+          <h1>
+            Weather in<br />
+            <span id="city">Amsterdam</span>
+          </h1>
+        </div>
+
+        <div class="col-sm-5 search">
+          <form action="search" id="search">
+            <div class="input-group mb-3">
+              <input
+                type="search"
+                class="form-control"
+                placeholder="Search location"
+                aria-label="Search location"
+                id="search-input"
+              />
+              <div class="input-group-append">
+                <button
+                  class="input-group-submit btn btn-outline-primary"
+                  type="submit"
+                >
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+          <button class="input-group current-location">Show current location</button>
+        </div>
+      </div>
+
+      <div class="weather-cat">
+        <h2>Today</h2>
+      </div>
+
+      <div class="row today-temp">
+        <div class="col temp">
+          <div class="current-temp">
+            <span id="temp-current">16</span>°<span class="celsius">C</span>
+          </div>
+          <p>
+            <span id="temp-today-min">13</span>°/<span id="temp-today-max">18</span>°
+            <br />
+          </p>
+        </div>
+        <div class="col-3">
+          <div class="weather-today">
+            <img class="weather-icon-today" src="images/01d.jpg" />
+          </div>
+          </p>
+        </div>
+        <div class="col temp-addition">
+          <p>
+            Humidity: <span id="humidity">92</span>%<br />
+            Wind: <span id="wind">24</span> km/h
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <div class="weather-cat">
+            <h3 id="day-two">Day 2</h3>
+          </div>
+          <div class="forecast-block-day">
+            <div class="img-section">
+              <img class="forecast-icon" src="images/02d.jpg" />
+              </div>
+              <p>
+              <div class="forecast-temp"
+                ><span id="day-two-min">10</span>°/<span id="day-two-max"
+                  >14</span
+                >°</div
+              >
+            </p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="weather-cat">
+            <h3 id="day-three">Day 3</h3>
+          </div>
+          <div class="forecast-block-day">
+            <div class="img-section">            
+              <img class="forecast-icon" src="images/03d.jpg" />
+              </div>
+            <p>
+              <div class="forecast-temp"
+                ><span id="day-three-min">12</span>°/<span id="day-three-max"
+                  >15</span
+                >°</div
+              >
+            </p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="weather-cat">
+            <h3 id="day-four">Day 4</h3>
+          </div>
+          <div class="forecast-block-day">
+            <div class="img-section">
+              <img class="forecast-icon" src="images/09d.jpg" />
+              </div>
+            <p>              
+              <div class="forecast-temp"
+                ><span id="day-four-min">13</span>°/<span id="day-four-max"
+                  >19</span
+                >°</div
+              >
+            </p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="weather-cat">
+            <h3 id="day-five">Day 5</h3>
+          </div>
+          <div class="forecast-block-day">
+            <div class="img-section">            
+              <img class="forecast-icon" src="images/10d.jpg" />
+              </div>
+            <p>
+              <div class="forecast-temp"
+                ><span id="day-five-min">11</span>°/<span id="day-five-max"
+                  >18</span
+                >°</div
+              >
+            </p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="weather-cat">
+            <h3 id="day-six">Day 6</h3>
+          </div>
+          <div class="forecast-block-day">
+            <div class="img-section img-day-six">              
+              <img class="forecast-icon" src="images/11d.jpg" />
+              </div>
+             <p>
+              <span class="forecast-temp"
+                ><span id="day-six-min">12</span>°/<span id="day-six-max"
+                  >20</span
+                >°</span
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+      <p>
+      <a class="fahrenheit">Show in Fahrenheit</a>
+      </p>
+    </div>
+    <script src="src/script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/a9c8117e1a.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
