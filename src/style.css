@@ -27,6 +27,12 @@ h3 {
   font-weight: 600;
 }
 
+footer {
+  font-size: 12px;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
 .container {
   background: #fff;
   border: solid 1px lightgray;
@@ -111,9 +117,6 @@ h3 {
   float: right;
   font-size: 12px;
   margin: 0px 0px 20px 0px;
-  text-align: right;
-  text-decoration: underline;
-  transition: all 200ms ease-in-out;
 }
 
 .fahrenheit:hover {
@@ -169,6 +172,14 @@ h3 {
 .forecast-temp {
   font-size: 14px;
   line-height: 20px;
+}
+
+.footer {
+  color: #000;
+}
+
+.footer:hover {
+  color: #59517b;
 }
 
 #cover-image {
