@@ -27,7 +27,7 @@ let hour = ("0" + now.getHours()).slice(-2);
 let minutes = ("0" + now.getMinutes()).slice(-2);
 
 let date = document.querySelector("h2");
-date.innerHTML = `Today (${hour}:${minutes})`;
+date.innerHTML = `${today} (${hour}:${minutes})`;
 
 let dateTwo = document.querySelector("#day-two");
 dateTwo.innerHTML = `${tomorrow}`;
@@ -43,6 +43,16 @@ dateFive.innerHTML = `${dayFive}`;
 
 let dateSix = document.querySelector("#day-six");
 dateSix.innerHTML = `${daySix}`;
+
+// Local time
+function formatTime(timestamp) {
+  let localNow = new Date(timestamp);
+
+  let hour = ("0" + localNow.getHours()).slice(-2);
+  let minutes = ("0" + localNow.getMinutes()).slice(-2);
+
+  return `(${hour}:${minutes})`;
+}
 
 // Search functionality
 function showTemperature(response) {
@@ -65,6 +75,10 @@ function showTemperature(response) {
   currentWind.innerHTML = `${wind}`;
   let currentIcon = document.querySelector(".weather-today");
   currentIcon.innerHTML = `<img src="images/${weatherIcon}.jpg">`;
+
+  let date = document.querySelector("h2");
+  date.innerHTML =
+    "Today " + formatTime(response.data.dt + response.data.timezone * 1000);
 }
 
 function searchCity(event) {
