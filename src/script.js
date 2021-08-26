@@ -64,7 +64,7 @@ function showTemperature(response) {
   let currentWind = document.querySelector("#wind");
   currentWind.innerHTML = `${wind}`;
   let currentIcon = document.querySelector(".weather-today");
-  currentIcon.innerHTML = `<img class="weather-icon-today" src="images/${weatherIcon}.jpg">`;
+  currentIcon.innerHTML = `<img src="images/${weatherIcon}.jpg">`;
 }
 
 function searchCity(event) {
