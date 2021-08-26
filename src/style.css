@@ -112,23 +112,15 @@ footer {
   font-weight: 600;
 }
 
-.fahrenheit {
-  color: #000;
-  float: right;
-  font-size: 12px;
-  margin: 0px 0px 20px 0px;
-}
-
-.fahrenheit:hover {
-  color: #59517b;
-  cursor: pointer;
+.weather-today {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
 }
 
 .weather-icon-today {
-  display: block;
-  margin: 0px auto;
-  margin-left: 15px;
-  width: 85%;
+  width: 60%;
 }
 
 .temp-addition {
@@ -155,23 +147,21 @@ footer {
   width: 65%;
 }
 
-.fa-sun {
-  color: orange;
-}
-
-.fa-cloud,
-.fa-cloud-sun {
-  color: lightgray;
-}
-
-.fa-cloud-rain,
-.fa-cloud-showers-heavy {
-  color: gray;
-}
-
 .forecast-temp {
   font-size: 14px;
   line-height: 20px;
+}
+
+.fahrenheit {
+  color: #000;
+  float: right;
+  font-size: 12px;
+  margin: 0px 0px 20px 0px;
+}
+
+.fahrenheit:hover {
+  color: #59517b;
+  cursor: pointer;
 }
 
 .footer {

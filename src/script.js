@@ -27,7 +27,7 @@ let hour = ("0" + now.getHours()).slice(-2);
 let minutes = ("0" + now.getMinutes()).slice(-2);
 
 let date = document.querySelector("h2");
-date.innerHTML = `${today} (${hour}:${minutes})`;
+date.innerHTML = `Today (${hour}:${minutes})`;
 
 let dateTwo = document.querySelector("#day-two");
 dateTwo.innerHTML = `${tomorrow}`;
