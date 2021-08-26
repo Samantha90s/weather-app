@@ -126,7 +126,7 @@ footer {
 
 .weather-icon-today {
   display: block;
-  margin: 8px auto;
+  margin: 0px auto;
   margin-left: 15px;
   width: 85%;
 }
