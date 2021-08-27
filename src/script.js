@@ -1,50 +1,47 @@
 // Dates and times
-let now = new Date();
-
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Thursday",
-  "Friday",
-];
-
-let tomorrow = days[now.getDay() + 1].slice(0, 3);
-let dayThree = days[now.getDay() + 2].slice(0, 3);
-let dayFour = days[now.getDay() + 3].slice(0, 3);
-let dayFive = days[now.getDay() + 4].slice(0, 3);
-let daySix = days[now.getDay() + 5].slice(0, 3);
-
-let dateTwo = document.querySelector("#day-two");
-dateTwo.innerHTML = `${tomorrow}`;
-
-let dateThree = document.querySelector("#day-three");
-dateThree.innerHTML = `${dayThree}`;
-
-let dateFour = document.querySelector("#day-four");
-dateFour.innerHTML = `${dayFour}`;
-
-let dateFive = document.querySelector("#day-five");
-dateFive.innerHTML = `${dayFive}`;
-
-let dateSix = document.querySelector("#day-six");
-dateSix.innerHTML = `${daySix}`;
-
-// Local time
 function formatTime(timestamp) {
   let now = new Date(timestamp);
+
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Thursday",
+    "Friday",
+  ];
+
+  let tomorrow = days[now.getDay() + 1].slice(0, 3);
+  let dayThree = days[now.getDay() + 2].slice(0, 3);
+  let dayFour = days[now.getDay() + 3].slice(0, 3);
+  let dayFive = days[now.getDay() + 4].slice(0, 3);
+  let daySix = days[now.getDay() + 5].slice(0, 3);
+
+  let dateTwo = document.querySelector("#day-two");
+  dateTwo.innerHTML = `${tomorrow}`;
+
+  let dateThree = document.querySelector("#day-three");
+  dateThree.innerHTML = `${dayThree}`;
+
+  let dateFour = document.querySelector("#day-four");
+  dateFour.innerHTML = `${dayFour}`;
+
+  let dateFive = document.querySelector("#day-five");
+  dateFive.innerHTML = `${dayFive}`;
+
+  let dateSix = document.querySelector("#day-six");
+  dateSix.innerHTML = `${daySix}`;
 
   let hour = ("0" + now.getHours()).slice(-2);
   let minutes = ("0" + now.getMinutes()).slice(-2);
 
-  return `${hour}:${minutes}, local time`;
+  return `Last updated: ${hour}:${minutes}`;
 }
 
 // Search functionality
@@ -70,7 +67,7 @@ function showTemperature(response) {
   currentIcon.innerHTML = `<img src="images/${weatherIcon}.jpg">`;
 
   let date = document.querySelector(".last-updated");
-  date.innerHTML = "Last updated: " + formatTime(response.data.dt * 1000);
+  date.innerHTML = formatTime(response.data.dt * 1000);
 }
 
 function searchCity(event) {
