@@ -52,6 +52,7 @@ function showTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   let temperatureMin = Math.round(response.data.main.temp_min);
   let temperatureMax = Math.round(response.data.main.temp_max);
+  let condition = response.data.weather[0].description;
   let humidity = response.data.main.humidity;
   let wind = Math.round((response.data.wind.speed * (60 * 60)) / 1000);
   let weatherIcon = response.data.weather[0].icon;
@@ -66,6 +67,8 @@ function showTemperature(response) {
   tempMin.innerHTML = `${temperatureMin}`;
   let tempMax = document.querySelector("#temp-today-max");
   tempMax.innerHTML = `${temperatureMax}`;
+  let currentCondition = document.querySelector("#condition");
+  currentCondition.innerHTML = `${condition}`;
   let currentHumidity = document.querySelector("#humidity");
   currentHumidity.innerHTML = `${humidity}`;
   let currentWind = document.querySelector("#wind");

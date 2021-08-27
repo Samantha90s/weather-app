@@ -196,6 +196,14 @@ footer {
   font-weight: bold;
 }
 
+#condition {
+  display: inline-block;
+}
+
+#condition:first-letter {
+  text-transform: uppercase;
+}
+
 #temp-today-max,
 #day-two-max,
 #day-three-max,
