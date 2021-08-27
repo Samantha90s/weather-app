@@ -2,42 +2,6 @@
 function formatTime(timestamp) {
   let now = new Date(timestamp);
 
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Thursday",
-    "Friday",
-  ];
-
-  let tomorrow = days[now.getDay() + 1].slice(0, 3);
-  let dayThree = days[now.getDay() + 2].slice(0, 3);
-  let dayFour = days[now.getDay() + 3].slice(0, 3);
-  let dayFive = days[now.getDay() + 4].slice(0, 3);
-  let daySix = days[now.getDay() + 5].slice(0, 3);
-
-  let dateTwo = document.querySelector("#day-two");
-  dateTwo.innerHTML = `${tomorrow}`;
-
-  let dateThree = document.querySelector("#day-three");
-  dateThree.innerHTML = `${dayThree}`;
-
-  let dateFour = document.querySelector("#day-four");
-  dateFour.innerHTML = `${dayFour}`;
-
-  let dateFive = document.querySelector("#day-five");
-  dateFive.innerHTML = `${dayFive}`;
-
-  let dateSix = document.querySelector("#day-six");
-  dateSix.innerHTML = `${daySix}`;
-
   let hour = ("0" + now.getHours()).slice(-2);
   let minutes = ("0" + now.getMinutes()).slice(-2);
 
@@ -157,56 +121,6 @@ function convertTemp(event) {
   let fahrenheitTempMax = (celsiusTemperatureMax * 9) / 5 + 32;
 
   currentTempMax.innerHTML = Math.round(fahrenheitTempMax);
-
-  let dayTwoTempMin = document.querySelector("#day-two-min");
-  let celsiusTwoTempMin = dayTwoTempMin.innerHTML;
-
-  dayTwoTempMin.innerHTML = Math.round((celsiusTwoTempMin * 9) / 5 + 32);
-
-  let dayTwoTempMax = document.querySelector("#day-two-max");
-  let celsiusTwoTempMax = dayTwoTempMax.innerHTML;
-
-  dayTwoTempMax.innerHTML = Math.round((celsiusTwoTempMax * 9) / 5 + 32);
-
-  let dayThreeTempMin = document.querySelector("#day-three-min");
-  let celsiusThreeTempMin = dayThreeTempMin.innerHTML;
-
-  dayThreeTempMin.innerHTML = Math.round((celsiusThreeTempMin * 9) / 5 + 32);
-
-  let dayThreeTempMax = document.querySelector("#day-three-max");
-  let celsiusThreeTempMax = dayThreeTempMax.innerHTML;
-
-  dayThreeTempMax.innerHTML = Math.round((celsiusThreeTempMax * 9) / 5 + 32);
-
-  let dayFourTempMin = document.querySelector("#day-four-min");
-  let celsiusFourTempMin = dayFourTempMin.innerHTML;
-
-  dayFourTempMin.innerHTML = Math.round((celsiusFourTempMin * 9) / 5 + 32);
-
-  let dayFourTempMax = document.querySelector("#day-four-max");
-  let celsiusFourTempMax = dayFourTempMax.innerHTML;
-
-  dayFourTempMax.innerHTML = Math.round((celsiusFourTempMax * 9) / 5 + 32);
-
-  let dayFiveTempMin = document.querySelector("#day-five-min");
-  let celsiusFiveTempMin = dayFiveTempMin.innerHTML;
-
-  dayFiveTempMin.innerHTML = Math.round((celsiusFiveTempMin * 9) / 5 + 32);
-
-  let dayFiveTempMax = document.querySelector("#day-five-max");
-  let celsiusFiveTempMax = dayFiveTempMax.innerHTML;
-
-  dayFiveTempMax.innerHTML = Math.round((celsiusFiveTempMax * 9) / 5 + 32);
-
-  let daySixTempMin = document.querySelector("#day-six-min");
-  let celsiusSixTempMin = daySixTempMin.innerHTML;
-
-  daySixTempMin.innerHTML = Math.round((celsiusSixTempMin * 9) / 5 + 32);
-
-  let daySixTempMax = document.querySelector("#day-six-max");
-  let celsiusSixTempMax = daySixTempMax.innerHTML;
-
-  daySixTempMax.innerHTML = Math.round((celsiusSixTempMax * 9) / 5 + 32);
 
   let fahrenheitToCelsius = document.querySelector(".fahrenheit");
   fahrenheitToCelsius.innerHTML = `Show in Celsius`;

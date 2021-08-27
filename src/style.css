@@ -140,28 +140,6 @@ footer {
   margin-top: 15px;
 }
 
-.forecast-block-day {
-  margin-top: 10px;
-  text-align: center;
-}
-
-.img-section {
-  height: 40px;
-}
-
-.img-section img {
-  display: block;
-  margin: 0 auto;
-  max-width: 55px;
-  width: 65%;
-}
-
-.forecast-temp {
-  font-size: 14px;
-  line-height: 20px;
-  margin-top: 12px;
-}
-
 .fahrenheit {
   color: #000;
   float: right;
@@ -204,11 +182,6 @@ footer {
   text-transform: uppercase;
 }
 
-#temp-today-max,
-#day-two-max,
-#day-three-max,
-#day-four-max,
-#day-five-max,
-#day-six-max {
+#temp-today-max {
   font-weight: bold;
 }
