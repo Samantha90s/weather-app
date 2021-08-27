@@ -8,6 +8,59 @@ function formatTime(timestamp) {
   return `Last updated: ${hour}:${minutes}`;
 }
 
+// Forecast
+function formatForecast(timestamp) {
+  let date = new Date(timestamp * 1000);
+
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let day = date.getDay();
+
+  return days[day];
+}
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  let forecastSection = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  forecast.forEach(function (forecastDay, index) {
+    if (index > 0 && index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `          <div class="col">
+            <div class="weather-cat">
+              <h3>${formatForecast(forecastDay.dt)}</h3>
+            </div>
+            <div class="forecast-block-day">
+              <div class="img-section">
+                <img src="images/${forecastDay.weather[0].icon}.jpg" />
+              </div>
+              <div class="forecast-temp">
+                <p>
+                  ${Math.round(
+                    forecastDay.temp.min
+                  )}°/<span id="forecast-max">${Math.round(
+          forecastDay.temp.max
+        )}</span>°
+                </p>
+              </div>
+            </div>
+          </div>`;
+    }
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+
+  forecastSection.innerHTML = forecastHTML;
+}
+
+function getForecastCoords(coordinates) {
+  let apiKey = "2f386d782b5e244383fa40d4dada37d4";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude=minutely,hourly,alerts&appid=${apiKey}&units=metric`;
+
+  axios(apiUrl).then(displayForecast);
+}
+
 // Search functionality
 function showTemperature(response) {
   let city = document.querySelector("#city");
@@ -42,6 +95,8 @@ function showTemperature(response) {
 
   let date = document.querySelector(".last-updated");
   date.innerHTML = formatTime(response.data.dt * 1000);
+
+  getForecastCoords(response.data.coord);
 }
 
 function searchCity(userCity) {
@@ -127,6 +182,7 @@ function convertTemp(event) {
   fahrenheitToCelsius.addEventListener("click", convertCelsius);
 }
 
+// Global function calls
 let tempConverter = document.querySelector(".fahrenheit");
 tempConverter.addEventListener("click", convertTemp);
 
@@ -134,5 +190,4 @@ let celsiusTemperature = null;
 let celsiusTemperatureMin = null;
 let celsiusTemperatureMax = null;
 
-// Default city
 searchCity("Amsterdam");

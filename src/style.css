@@ -24,7 +24,7 @@ h2 {
 }
 
 h3 {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
 }
 
@@ -140,6 +140,28 @@ footer {
   margin-top: 15px;
 }
 
+.forecast-block-day {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.img-section {
+  height: 40px;
+}
+
+.img-section img {
+  display: block;
+  margin: 0 auto;
+  max-width: 55px;
+  width: 65%;
+}
+
+.forecast-temp {
+  font-size: 14px;
+  line-height: 20px;
+  margin-top: 16px;
+}
+
 .fahrenheit {
   color: #000;
   float: right;
@@ -182,6 +204,7 @@ footer {
   text-transform: uppercase;
 }
 
-#temp-today-max {
+#temp-today-max,
+#forecast-max {
   font-weight: bold;
 }
