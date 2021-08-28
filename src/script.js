@@ -74,10 +74,6 @@ function showTemperature(response) {
   let wind = Math.round((response.data.wind.speed * (60 * 60)) / 1000);
   let weatherIcon = response.data.weather[0].icon;
 
-  celsiusTemperature = response.data.main.temp;
-  celsiusTemperatureMin = response.data.main.temp_min;
-  celsiusTemperatureMax = response.data.main.temp_max;
-
   let tempCurrent = document.querySelector("#temp-current");
   tempCurrent.innerHTML = `${temperature}`;
   let tempMin = document.querySelector("#temp-today-min");
@@ -136,58 +132,5 @@ function getLocation() {
 let currentLocation = document.querySelector(".current-location");
 currentLocation.addEventListener("click", getLocation);
 
-// Convert temperature
-function convertCelsius(event) {
-  event.preventDefault();
-
-  let currentTemp = document.querySelector("#temp-current");
-  currentTemp.innerHTML = Math.round(celsiusTemperature);
-
-  let currentTempAddition = document.querySelector(".celsius");
-  currentTempAddition.innerHTML = `C`;
-
-  let currentTempMin = document.querySelector("#temp-today-min");
-  currentTempMin.innerHTML = Math.round(celsiusTemperatureMin);
-
-  let currentTempMax = document.querySelector("#temp-today-max");
-  currentTempMax.innerHTML = Math.round(celsiusTemperatureMax);
-
-  let tempConverter = document.querySelector(".fahrenheit");
-  tempConverter.innerHTML = ``;
-}
-
-function convertTemp(event) {
-  event.preventDefault();
-
-  let currentTemp = document.querySelector("#temp-current");
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-
-  currentTemp.innerHTML = Math.round(fahrenheitTemperature);
-
-  let currentTempAddition = document.querySelector(".celsius");
-  currentTempAddition.innerHTML = `F`;
-
-  let currentTempMin = document.querySelector("#temp-today-min");
-  let fahrenheitTempMin = (celsiusTemperatureMin * 9) / 5 + 32;
-
-  currentTempMin.innerHTML = Math.round(fahrenheitTempMin);
-
-  let currentTempMax = document.querySelector("#temp-today-max");
-  let fahrenheitTempMax = (celsiusTemperatureMax * 9) / 5 + 32;
-
-  currentTempMax.innerHTML = Math.round(fahrenheitTempMax);
-
-  let fahrenheitToCelsius = document.querySelector(".fahrenheit");
-  fahrenheitToCelsius.innerHTML = `Show in Celsius`;
-  fahrenheitToCelsius.addEventListener("click", convertCelsius);
-}
-
 // Global function calls
-let tempConverter = document.querySelector(".fahrenheit");
-tempConverter.addEventListener("click", convertTemp);
-
-let celsiusTemperature = null;
-let celsiusTemperatureMin = null;
-let celsiusTemperatureMax = null;
-
 searchCity("Amsterdam");

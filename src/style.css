@@ -162,18 +162,6 @@ footer {
   margin-top: 16px;
 }
 
-.fahrenheit {
-  color: #000;
-  float: right;
-  font-size: 12px;
-  margin: 0px 0px 20px 0px;
-}
-
-.fahrenheit:hover {
-  color: #59517b;
-  cursor: pointer;
-}
-
 .footer {
   color: #000;
 }
